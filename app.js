@@ -4,10 +4,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var fs = require('fs');
+var mongoose = require('mongoose');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
-
+//var routes = require('./routes/index');
+//var users = require('./routes/users');
+console.log('running');
 var app = express();
 
 // view engine setup
@@ -22,8 +24,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/users', users);
+mongoose.connect('mongo://localhost:27/schoolsDB');
+
+fs.readdirSync(__dirname + '/models').forEach(function(filename){
+  if(~filename.indexOf('.js')) require(__dirname + '/models/' + filename)
+});
+
+require('./routes')(app);
+
+//app.use('/', routes);
+//app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
