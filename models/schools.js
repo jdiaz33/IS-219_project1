@@ -20,6 +20,6 @@ var schoolSchema = new Schema({
 	WEBADDR : String,
 	ADMINURL : String,
 	FAILDURL : String,
-	APPLURL : String
+	APPLURL : String,
 	NPRINCURL : String
 })
