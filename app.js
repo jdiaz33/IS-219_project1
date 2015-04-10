@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect('mongo://localhost:27/schoolsDB');
+mongoose.connect('mongodb://localhost:27/schoolsDB');
 
 fs.readdirSync(__dirname + '/models').forEach(function(filename){
   if(~filename.indexOf('.js')) require(__dirname + '/models/' + filename)
