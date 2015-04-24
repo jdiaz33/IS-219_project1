@@ -2,15 +2,16 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var schoolSchema = new Schema({
-	UNITID : Number,
+	_id : String,
+	UNITID : String,
 	INSTNM : String,
 	ADDR : String,
 	CITY : String,
 	STABBR : String,
 	ZIP : Number,
 	FIPS : Number,
-	OBEREG : Number,
-	CHFNM : String,
+	OBEREG : Number
+	/*CHFNM : String,
 	CHFTITLE : String,
 	GENTELE : Number,
 	FAXTELE : Number,
@@ -21,5 +22,15 @@ var schoolSchema = new Schema({
 	ADMINURL : String,
 	FAILDURL : String,
 	APPLURL : String,
-	NPRINCURL : String
-})
+	NPRINCURL : String*/
+});
+
+/*var schoolRecordSchema = new Schema({
+	_id: String,
+	UNITID : String, 
+	INSTNM : String
+});
+
+mongoose.model('College', schoolRecordSchema, 'schoolList');*/
+
+mongoose.model('School', schoolSchema, 'schoolList');
