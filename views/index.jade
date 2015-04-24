@@ -7,4 +7,5 @@ block content
   div
     each school, i in schools
       ul
-        a(href='#') #{school.INSTNM}
+        a(href='/' + school.UNITID) #{school.INSTNM}
+        //a(href='#')title
