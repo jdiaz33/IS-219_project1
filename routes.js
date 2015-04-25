@@ -6,5 +6,4 @@ module.exports = function (app) {
 
 	app.get('/', index.index);
 	app.get('/:id', college.college);
-	//app.get('/:id', index.college);
 }
