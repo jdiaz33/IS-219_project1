@@ -10,9 +10,9 @@ var schoolSchema = new Schema({
 	STABBR : String,
 	ZIP : Number,
 	FIPS : Number,
-	OBEREG : Number
-	/*CHFNM : String,
-	CHFTITLE : String,
+	OBEREG : Number,
+	CHFNM : String
+	/*CHFTITLE : String,
 	GENTELE : Number,
 	FAXTELE : Number,
 	EIN : Number,
