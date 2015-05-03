@@ -7,8 +7,6 @@ var bodyParser = require('body-parser');
 var fs = require('fs');
 var mongoose = require('mongoose');
 
-//var routes = require('./routes/index');
-//var users = require('./routes/users');
 console.log('running');
 var app = express();
 
@@ -31,9 +29,6 @@ fs.readdirSync(__dirname + '/models').forEach(function(filename){
 });
 
 require('./routes')(app);
-
-//app.use('/', routes);
-//app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
