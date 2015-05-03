@@ -2,10 +2,8 @@ extends layout
 
 block content
   h1= title
-  //p Welcome to #{title}
 
   div
     each school, i in schools
       ul
         a(href='/' + school.UNITID) #{school.INSTNM}
-        //a(href='#')title
