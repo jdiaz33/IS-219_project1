@@ -25,12 +25,4 @@ var schoolSchema = new Schema({
 	NPRINCURL : String*/
 });
 
-/*var schoolRecordSchema = new Schema({
-	_id: String,
-	UNITID : String, 
-	INSTNM : String
-});
-
-mongoose.model('College', schoolRecordSchema, 'schoolList');*/
-
 mongoose.model('School', schoolSchema, 'schoolList');
